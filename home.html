@@ -33,7 +33,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   object-fit:contain;
 }
 
-
 nav{display:flex;gap:12px}
 nav a{color:var(--muted);text-decoration:none;font-weight:500;padding:10px 22px;border-radius:8px;border:1px solid transparent;transition:color .25s,border-color .25s,box-shadow .25s,text-shadow .25s,background .25s}
 nav a:hover,nav a.active{color:#fff;border-color:var(--accent);background:rgba(212,175,55,.08);text-shadow:0 0 8px var(--accent);box-shadow:0 0 12px rgba(212,175,55,.7),0 0 28px rgba(212,175,55,.35)}
@@ -52,6 +51,10 @@ main{max-width:1100px;margin:0 auto;padding:56px 24px 80px}
 .filler{border:2px dashed var(--border);border-radius:12px;background:var(--surface);padding:24px;color:var(--muted)}
 .photo{min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center}
 
+/* Add "filled" next to "filler" to remove the dotted square once real content is in */
+.filled{border:none;background:none;padding:0;min-height:0}
+.photo img{display:block;max-width:100%;height:auto;border-radius:12px}
+
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
 .member{text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 20px}
 .avatar{width:110px;height:110px;margin:0 auto 16px;border-radius:50%;border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted)}
@@ -69,7 +72,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
 </head>
 <body>
 <header>
-  <div class="logo"><img src="https://github.com/mfksu/Capstone/blob/main/ksulogo.jpg?raw=true"></div>
+  <div class="logo"><img src="https://github.com/mfksu/Capstone/blob/main/ksulogo.jpg?raw=true" alt="Logo"></div>
   <nav>
     <a href="#project" data-p="project">Project</a>
     <a href="#team" data-p="team">Team</a>
@@ -83,22 +86,43 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
       <p>Capstone Project &mdash; Diane Loves Living</p>
     </div>
 
+    <!-- SECTION 1: text left, photo right -->
     <div class="split">
       <div class="text">
         <h2>Diane Loves Living</h2>
-        <div class="filler">Diane Loves Living is a caregiving organization that supports individuals with mental 
-          and physical disabilities. To foster community and help clients develop essential social and 
-          practical skills, the organization hosts various community events. However, the business 
-          currently lacks a standardized system to measure event attendance and lacks automated 
-          interventions to reduce no-show rates. The goal of this project is to resolve these operational 
-          challenges by implementing a cohesive and low-cost technological solution that can be 
-          maintained by non-technical staff and that integrates into the organization's existing ecosystem. 
+        <div class="filler"><p><b>Diane Loves Living</b> is a caregiving organization that supports individuals with mental
+          and physical disabilities. To foster community and help clients develop essential social and
+          practical skills, the organization hosts various community events. However, the business
+          currently lacks a standardized system to measure event attendance and lacks automated
+          interventions to reduce no-show rates.</p>
+            <p>The goal of this project is to resolve these operational
+          challenges by implementing a cohesive and low-cost technological solution that can be
+          maintained by non-technical staff and that integrates into the organization's existing ecosystem.
           Our team focused on creating a system that is financially modest and easy for non-technical
-          employees to maintain.</div>
+          employees to maintain.</p></div>
       </div>
-      <div class="filler photo"><img src="https://github.com/mfksu/Capstone/blob/main/DLLlogowhitebg.png?raw=true"></div>
+      <div class="filler filled photo"><img src="https://github.com/mfksu/Capstone/blob/main/DLLlogowhitebg.png?raw=true" alt="Diane Loves Living logo"></div>
     </div>
 
+    <!-- SECTION 2: text right, photo left -->
+    <div class="split reverse">
+      <div class="text">
+        <h2>Section heading here</h2>
+        <div class="filler">Text here</div>
+      </div>
+      <div class="filler photo">Photo link here</div>
+    </div>
+
+    <!-- SECTION 3: text left, photo right -->
+    <div class="split">
+      <div class="text">
+        <h2>Section heading here</h2>
+        <div class="filler">Text here</div>
+      </div>
+      <div class="filler photo">Photo link here</div>
+    </div>
+
+    <!-- SECTION 4: text right, photo left -->
     <div class="split reverse">
       <div class="text">
         <h2>Section heading here</h2>
