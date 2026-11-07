@@ -43,7 +43,12 @@ main{max-width:1100px;margin:0 auto;padding:56px 24px 80px}
 .hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0 0 14px;font-weight:700}
 .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.1rem}
 
-.split{display:flex;align-items:center;gap:48px;margin-bottom:72px}
+.split{display:flex;align-items:center;gap:48px;margin:0;padding:64px 0;border-top:1px solid rgba(212,175,55,.35);
+  background:var(--bg);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax)}
+/* Alternating bands: 1st black, 2nd dark grey, repeat. Change #1a1a1a to adjust the grey. */
+.split:nth-of-type(even){background:#1a1a1a;box-shadow:0 0 0 100vmax #1a1a1a}
+.split:nth-of-type(even) .filler:not(.filled){background:#222}
+.split:last-of-type{margin-bottom:-80px}
 .split.reverse{flex-direction:row-reverse}
 .split>div{flex:1 1 0;min-width:0}
 .text h2{margin:0 0 12px;font-size:1.7rem}
@@ -81,10 +86,10 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
 
 <main>
   <section id="project" class="page">
-    <div class="hero">
+    <section class="hero">
       <h1>Event Engagement &amp; Attendance Management POC</h1>
       <p>Capstone Project &mdash; Diane Loves Living</p>
-    </div>
+    </section>
 
     <!-- SECTION 1: text left, photo right -->
     <div class="split">
