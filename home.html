@@ -80,10 +80,14 @@ main{max-width:1100px;margin:0 auto;padding:56px 24px 80px}
 footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border-top:1px solid var(--border)}
 
 @media(max-width:760px){
-  header{padding:12px 16px}
-  .split,.split.reverse{flex-direction:column;gap:24px}
+  header{padding:12px 16px;gap:16px}
+  .logo{width:130px;height:80px;flex-shrink:0}
+  nav{gap:6px;flex-shrink:0}
+  nav a{padding:8px 12px;font-size:.9rem}
+  /* Stack text and images vertically without overlapping */
+  .split,.split.reverse{flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:24px;padding:40px 0}
+  .split>div{flex:0 0 auto}
   .figure{flex:0 0 auto}
-  nav a{padding:8px 14px}
 }
 </style>
 </head>
@@ -177,7 +181,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
   <section id="team" class="page">
     <div class="hero">
       <h1>Meet the Team</h1>
-      <p>Team description here.</p>
+      <!--<p>Team description here.</p> -->
     </div>
     <div class="team">
       <!-- To add a photo: replace "Photo here" with <img src="YOUR-IMAGE-LINK" alt="Name">
