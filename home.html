@@ -60,6 +60,12 @@ main{max-width:1100px;margin:0 auto;padding:56px 24px 80px}
 .filled{border:none;background:none;padding:0;min-height:0}
 .photo img{display:block;max-width:100%;height:auto;border-radius:12px}
 
+/* Centered figure with caption (spans full width under the text/photo row) */
+.split{flex-wrap:wrap}
+.figure{flex:0 0 100%;width:100%;margin:0;text-align:center}
+.figure .photo{max-width:700px;margin:0 auto}
+.figure figcaption{margin-top:12px;color:var(--muted);font-size:.9rem;font-style:italic}
+
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
 .member{text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 20px}
 .avatar{width:110px;height:110px;margin:0 auto 16px;border-radius:50%;border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted)}
@@ -71,6 +77,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
 @media(max-width:760px){
   header{padding:12px 16px}
   .split,.split.reverse{flex-direction:column;gap:24px}
+  .figure{flex:0 0 auto}
   nav a{padding:8px 14px}
 }
 </style>
@@ -91,7 +98,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
       <p>Capstone Project &mdash; Diane Loves Living</p>
     </section>
 
-    <!-- SECTION 1: text left, photo right -->
+    <!-- SECTION 1: text left, photo right, then centered figure below -->
     <div class="split">
       <div class="text">
         <h2>Diane Loves Living</h2>
@@ -107,6 +114,12 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px;border
           employees to maintain.</p></div>
       </div>
       <div class="filler filled photo"><img src="https://github.com/mfksu/Capstone/blob/main/DLLlogowhitebg.png?raw=true" alt="Diane Loves Living logo"></div>
+
+      <!-- CENTERED FIGURE WITH CAPTION -->
+      <figure class="figure">
+        <div class="filler filled photo"><img src="https://github.com/mfksu/Capstone/blob/main/mockup.png?raw=true" alt="Mock up website"></div>
+        <figcaption>Our recreation of the Diane Loves Living website.</figcaption>
+      </figure>
     </div>
 
     <!-- SECTION 2: text right, photo left -->
